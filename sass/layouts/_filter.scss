@@ -1,0 +1,96 @@
+.filter__title {
+  @extend %hidden;
+}
+
+.filter__card-set {
+  @include flex (null, center, null, 8px, nowrap);
+  margin-bottom: 50px;
+}
+
+.filter__btn {
+  padding: 8px 22px;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: calc(26 / 16);
+  text-align: center;
+  color: inherit;
+  background-color: var(--gray-bg-cl);
+  border: 1px solid transparent;
+  border-radius: var(--btn-radius);
+  cursor: pointer;
+  transition: color var(--anim), background-color var(--anim), box-shadow var(--anim);
+
+  &:hover,
+  &:focus {
+    color: var(--light-txt-cl);
+    background-color: var(--accent-bg-cl);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 2px 2px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.filter__link {
+  @extend %link;
+  display: block;
+  transition: box-shadow var(--anim);
+
+  &:hover,
+  &:focus {
+    color: var(--main-txt-cl);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+}
+
+.filter__wrap {
+  padding: 20px 24px;
+  border: 1px solid var(--filter-brd);
+}
+
+.filter__subtitle {
+  margin-bottom: 4px;
+  font-size: 18px;
+  line-height: calc(36 / 18);
+  letter-spacing: 0.06em;
+}
+
+.filter__desc {
+  font-size: 16px;
+  line-height: calc(30 / 16);
+  color: var(--grey-txt-cl);
+}
+
+/* Transition overlay */
+.filter__thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.filter__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(100%);
+  width: 100%;
+  height: 100%;
+  padding: 63px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--overlay-bg);
+  backdrop-filter: blur(4px);
+  transition: transform var(--anim);
+}
+
+.filter__overlay-desc {
+  font-size: 18px;
+  line-height: calc(28 / 14);
+  color: var(--light-txt-cl);
+  user-select: none;
+}
+
+.filter__link:hover .filter__overlay,
+.filter__link:focus .filter__overlay {
+  transform: translateY(0%);
+}
