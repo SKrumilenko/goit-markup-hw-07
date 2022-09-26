@@ -1,5 +1,5 @@
-.clients__card-set {
-  @include flex(null, center, null, null, nowrap);
+.clients {
+  @include flex(flex, center, null, 30px, nowrap);
 }
 
 .clients__link {

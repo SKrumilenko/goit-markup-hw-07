@@ -1,5 +1,5 @@
-.socials__card-set {
-  @include flex(null, center, null, 10px, nowrap);
+.socials {
+  @include flex(flex, center, null, 10px, nowrap);
 }
 
 .socials__link {
